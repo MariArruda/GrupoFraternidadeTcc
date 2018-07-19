@@ -209,7 +209,7 @@ desired effect
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../paginas/farmacia/cadastrar_medicamento.html">Cadastrar medicamento</a></li>
+            <li><a data-toggle="modal" data-target="#modal-default">Cadastrar medicamento</a></li>
             <li><a href="../../paginas/farmacia/entrada_estoque.html">Entrada de estoque</a></li>
           </ul>
         </li>
@@ -252,15 +252,27 @@ desired effect
                     <label>Quantidade total atual</label>
                     <input type="number" class="form-control" placeholder="10">
                   </div>
+                  <div class="form-group col-md-1">
+                    <div class="row">
+                      <label>Un. Medida</label>
+                    </div>
+                    <div class="row">
+                      <input disabled type="text" class="form-control" placeholder="10">
+                    </div>
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="form-group col-md-8">
+                  <div class="form-group col-md-6">
                     <label>Medicamento</label>
-                    <input type="text" class="form-control" placeholder="10">
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label>Quantidade</label>
-                    <input type="number" class="form-control" placeholder="10">
+                    <select class="form-control select2" style="width: 100%;">
+                      <option>Aceclofenaco</option>
+                      <option>Biozatin</option>
+                      <option>Captopril</option>
+                      <option>Dipirona</option>
+                      <option>Dipropam</option>
+                      <option>Efedrin</option>
+                      <option>Famox</option>
+                    </select>
                   </div>
                 </div>
                 <div class="row">
@@ -275,442 +287,98 @@ desired effect
                           <thead>
                           <tr>
                             <th>Quantidade</th>
+                            <th>Unidade Medida</th>
                             <th>Data de vencimento</th>
                             <th>Procedência</th>
-                            <th>Engine version</th>
-                            <th>CSS grade</th>
                           </tr>
                           </thead>
                           <tbody>
                           <tr>
-                            <td>Trident</td>
-                            <td>Internet
-                              Explorer 4.0
-                            </td>
-                            <td>Win 95+</td>
-                            <td> 4</td>
-                            <td>X</td>
+                            <td>10</td>
+                            <td>Mililitros</td>
+                            <td>13/09/2018</td>
+                            <td>Doação Castelo</td>
                           </tr>
                           <tr>
-                            <td>Trident</td>
-                            <td>Internet
-                              Explorer 5.0
-                            </td>
-                            <td>Win 95+</td>
+                            <td>20</td>
+                            <td>Miligramas</td>
+                            <td>30/10/2018</td>
+                            <td>Doação Mock</td>
+                          </tr>
+                          <tr>
+                            <td>15</td>
+                            <td>Mililitros</td>
+                            <td>22/12/2018</td>
+                            <td>Doação Teste</td>
+                          </tr>
+                          <tr>
+                            <td>25</td>
+                            <td>Miligramas</td>
+                            <td>15/10/2018</td>
+                            <td>Doação de Alguém</td>
+                          </tr>
+                          <tr>
+                            <td>10</td>
+                            <td>Gotas</td>
+                            <td>27/11/2018</td>
+                            <td>Doação 10</td>
+                          </tr>
+                          <tr>
+                            <td>15</td>
+                            <td>Miligramas</td>
+                            <td>26/10/2018</td>
+                            <td>Doação Jorge</td>
+                          </tr>
+                          <tr>
+                            <td>30</td>
+                            <td>Miligramas</td>
+                            <td>28/11/2018</td>
+                            <td>Doação Dr. Fulano</td>
+                          </tr>
+                          <tr>
+                            <td>35</td>
+                            <td>Mililitros</td>
+                            <td>11/10/2018</td>
+                            <td>Doação Casa 2</td>
+                          </tr>
+                          <tr>
+                            <td>25</td>
+                            <td>Gotas</td>
+                            <td>19/12/2018</td>
+                            <td>Doação 10</td>
+                          </tr>
+                          <tr>
                             <td>5</td>
-                            <td>C</td>
+                            <td>Mililitros</td>
+                            <td>25/08/2018</td>
+                            <td>Doação Centro ABC</td>
                           </tr>
                           <tr>
-                            <td>Trident</td>
-                            <td>Internet
-                              Explorer 5.5
-                            </td>
-                            <td>Win 95+</td>
-                            <td>5.5</td>
-                            <td>A</td>
+                            <td>5</td>
+                            <td>Mililitros</td>
+                            <td>25/08/2018</td>
+                            <td>Doação de teste</td>
                           </tr>
+                        </tbody>
+                        <tfoot>
                           <tr>
-                            <td>Trident</td>
-                            <td>Internet
-                              Explorer 6
-                            </td>
-                            <td>Win 98+</td>
-                            <td>6</td>
-                            <td>A</td>
+                            <th>Quantidade: </th>
+                            <th></th>
+                            <th></th>
+                            <th><button type="submit" class="btn btn-primary pull-right">Adicionar Medicamento</button></th>
                           </tr>
-                          <tr>
-                            <td>Trident</td>
-                            <td>Internet Explorer 7</td>
-                            <td>Win XP SP2+</td>
-                            <td>7</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Trident</td>
-                            <td>AOL browser (AOL desktop)</td>
-                            <td>Win XP</td>
-                            <td>6</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Firefox 1.0</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td>1.7</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Firefox 1.5</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td>1.8</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Firefox 2.0</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td>1.8</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Firefox 3.0</td>
-                            <td>Win 2k+ / OSX.3+</td>
-                            <td>1.9</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Camino 1.0</td>
-                            <td>OSX.2+</td>
-                            <td>1.8</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Camino 1.5</td>
-                            <td>OSX.3+</td>
-                            <td>1.8</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Netscape 7.2</td>
-                            <td>Win 95+ / Mac OS 8.6-9.2</td>
-                            <td>1.7</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Netscape Browser 8</td>
-                            <td>Win 98SE+</td>
-                            <td>1.7</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Netscape Navigator 9</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td>1.8</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.0</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td>1</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.1</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td>1.1</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.2</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td>1.2</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.3</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td>1.3</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.4</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td>1.4</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.5</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td>1.5</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.6</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td>1.6</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.7</td>
-                            <td>Win 98+ / OSX.1+</td>
-                            <td>1.7</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Mozilla 1.8</td>
-                            <td>Win 98+ / OSX.1+</td>
-                            <td>1.8</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Seamonkey 1.1</td>
-                            <td>Win 98+ / OSX.2+</td>
-                            <td>1.8</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Gecko</td>
-                            <td>Epiphany 2.20</td>
-                            <td>Gnome</td>
-                            <td>1.8</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Webkit</td>
-                            <td>Safari 1.2</td>
-                            <td>OSX.3</td>
-                            <td>125.5</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Webkit</td>
-                            <td>Safari 1.3</td>
-                            <td>OSX.3</td>
-                            <td>312.8</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Webkit</td>
-                            <td>Safari 2.0</td>
-                            <td>OSX.4+</td>
-                            <td>419.3</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Webkit</td>
-                            <td>Safari 3.0</td>
-                            <td>OSX.4+</td>
-                            <td>522.1</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Webkit</td>
-                            <td>OmniWeb 5.5</td>
-                            <td>OSX.4+</td>
-                            <td>420</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Webkit</td>
-                            <td>iPod Touch / iPhone</td>
-                            <td>iPod</td>
-                            <td>420.1</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Webkit</td>
-                            <td>S60</td>
-                            <td>S60</td>
-                            <td>413</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Presto</td>
-                            <td>Opera 7.0</td>
-                            <td>Win 95+ / OSX.1+</td>
-                            <td>-</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Presto</td>
-                            <td>Opera 7.5</td>
-                            <td>Win 95+ / OSX.2+</td>
-                            <td>-</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Presto</td>
-                            <td>Opera 8.0</td>
-                            <td>Win 95+ / OSX.2+</td>
-                            <td>-</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Presto</td>
-                            <td>Opera 8.5</td>
-                            <td>Win 95+ / OSX.2+</td>
-                            <td>-</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Presto</td>
-                            <td>Opera 9.0</td>
-                            <td>Win 95+ / OSX.3+</td>
-                            <td>-</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Presto</td>
-                            <td>Opera 9.2</td>
-                            <td>Win 88+ / OSX.3+</td>
-                            <td>-</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Presto</td>
-                            <td>Opera 9.5</td>
-                            <td>Win 88+ / OSX.3+</td>
-                            <td>-</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Presto</td>
-                            <td>Opera for Wii</td>
-                            <td>Wii</td>
-                            <td>-</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Presto</td>
-                            <td>Nokia N800</td>
-                            <td>N800</td>
-                            <td>-</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Presto</td>
-                            <td>Nintendo DS browser</td>
-                            <td>Nintendo DS</td>
-                            <td>8.5</td>
-                            <td>C/A<sup>1</sup></td>
-                          </tr>
-                          <tr>
-                            <td>KHTML</td>
-                            <td>Konqureror 3.1</td>
-                            <td>KDE 3.1</td>
-                            <td>3.1</td>
-                            <td>C</td>
-                          </tr>
-                          <tr>
-                            <td>KHTML</td>
-                            <td>Konqureror 3.3</td>
-                            <td>KDE 3.3</td>
-                            <td>3.3</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>KHTML</td>
-                            <td>Konqureror 3.5</td>
-                            <td>KDE 3.5</td>
-                            <td>3.5</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Tasman</td>
-                            <td>Internet Explorer 4.5</td>
-                            <td>Mac OS 8-9</td>
-                            <td>-</td>
-                            <td>X</td>
-                          </tr>
-                          <tr>
-                            <td>Tasman</td>
-                            <td>Internet Explorer 5.1</td>
-                            <td>Mac OS 7.6-9</td>
-                            <td>1</td>
-                            <td>C</td>
-                          </tr>
-                          <tr>
-                            <td>Tasman</td>
-                            <td>Internet Explorer 5.2</td>
-                            <td>Mac OS 8-X</td>
-                            <td>1</td>
-                            <td>C</td>
-                          </tr>
-                          <tr>
-                            <td>Misc</td>
-                            <td>NetFront 3.1</td>
-                            <td>Embedded devices</td>
-                            <td>-</td>
-                            <td>C</td>
-                          </tr>
-                          <tr>
-                            <td>Misc</td>
-                            <td>NetFront 3.4</td>
-                            <td>Embedded devices</td>
-                            <td>-</td>
-                            <td>A</td>
-                          </tr>
-                          <tr>
-                            <td>Misc</td>
-                            <td>Dillo 0.8</td>
-                            <td>Embedded devices</td>
-                            <td>-</td>
-                            <td>X</td>
-                          </tr>
-                          <tr>
-                            <td>Misc</td>
-                            <td>Links</td>
-                            <td>Text only</td>
-                            <td>-</td>
-                            <td>X</td>
-                          </tr>
-                          <tr>
-                            <td>Misc</td>
-                            <td>Lynx</td>
-                            <td>Text only</td>
-                            <td>-</td>
-                            <td>X</td>
-                          </tr>
-                          <tr>
-                            <td>Misc</td>
-                            <td>IE Mobile</td>
-                            <td>Windows Mobile 6</td>
-                            <td>-</td>
-                            <td>C</td>
-                          </tr>
-                          <tr>
-                            <td>Misc</td>
-                            <td>PSP browser</td>
-                            <td>PSP</td>
-                            <td>-</td>
-                            <td>C</td>
-                          </tr>
-                          <tr>
-                            <td>Other browsers</td>
-                            <td>All others</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>U</td>
-                          </tr>
-                          </tbody>
-                          <tfoot>
-                          <tr>
-                            <th>Quantidade</th>
-                            <th>Data de vencimento</th>
-                            <th>Procedência</th>
-                            <th>Engine version</th>
-                            <th>CSS grade</th>
-                          </tr>
-                          </tfoot>
+                        </tfoot>
                         </table>
                       </div>
                       <!-- /.box-body -->
                     </div>
                   </div>
                 </div>
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary pull-right">Cadastrar</button>
-                <a href="../../paginas/farmacia/cadastrar_medicamento.html"> <button class="btn btn-success">Voltar</button> </a>
-              </div>
             </form>
+          </div>
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary pull-right">Cadastrar</button>
+            <button class="btn btn-success" data-toggle="modal" data-target="#modal-default">Cancelar</button>
           </div>
 
         </div>
@@ -807,6 +475,29 @@ desired effect
   <!-- Add the sidebar's background. This div must be placed
   immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
+
+  <div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Cancelar Entrada de Estoque</h4>
+        </div>
+        <div class="modal-body">
+          <p>Deseja realmente cancelar essa entrada de estoque?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>
+          <a href="../../paginas/farmacia/cadastrar_medicamento.html"><button class="btn btn-primary">Confirmar</button></a>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
 </div>
 <!-- ./wrapper -->
 
