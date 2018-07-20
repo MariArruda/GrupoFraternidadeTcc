@@ -246,18 +246,18 @@ desired effect
                 <div class="row">
                   <div class="form-group col-md-3">
                     <label>Código interno</label>
-                    <input type="text" class="form-control" placeholder="ABC123">
+                    <input disabled type="text" class="form-control" placeholder="00015468">
                   </div>
                   <div class="form-group col-md-4">
-                    <label>Quantidade total atual</label>
-                    <input type="number" class="form-control" placeholder="10">
+                    <label>Quantidade a dar entrada</label>
+                    <input type="number" class="form-control" placeholder="0">
                   </div>
                   <div class="form-group col-md-1">
                     <div class="row">
                       <label>Un. Medida</label>
                     </div>
                     <div class="row">
-                      <input disabled type="text" class="form-control" placeholder="10">
+                      <input disabled type="text" class="form-control" placeholder="mg">
                     </div>
                   </div>
                 </div>
@@ -365,7 +365,7 @@ desired effect
                             <th>Quantidade: </th>
                             <th></th>
                             <th></th>
-                            <th><button type="submit" class="btn btn-primary pull-right">Adicionar Medicamento</button></th>
+                            <th><button type="button" data-toggle="modal" data-target="#modal-vencimento" class="btn btn-primary pull-right">Adicionar Medicamento</button></th>
                           </tr>
                         </tfoot>
                         </table>
@@ -497,6 +497,42 @@ desired effect
     <!-- /.modal-dialog -->
   </div>
   <!-- /.modal -->
+
+
+  
+  <div class="modal fade" id="modal-vencimento">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Informar Vencimentos </h4>
+          </div>
+          <div class="modal-body">
+            <p>Por favor, informe o vencimento da(s) unidade(s) informada(s): </p>
+
+            <div class="form-check">
+                <input id="chkTodas" type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">O mesmo para todas</label>
+              </div>
+            
+            <p><input id="data1" class="form-control" type="date"> </p>
+            <p><input id="data2" class="form-control" type="date"> </p>
+            <p><input id="data3" class="form-control" type="date"> </p>
+            <p><input id="data4" class="form-control" type="date"> </p>
+            <p><input id="data5" class="form-control" type="date"> </p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>
+            <a href="../../paginas/farmacia/cadastrar_medicamento.html"><button class="btn btn-primary">Confirmar</button></a>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
 </div>
 <!-- ./wrapper -->
