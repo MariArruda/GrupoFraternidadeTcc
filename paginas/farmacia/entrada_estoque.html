@@ -203,7 +203,7 @@ desired effect
         <!--<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Home</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li> -->
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Farmácia</span>
+          <a href="#"><i class="fa fa-plus-square"></i> <span>Farmácia</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -250,7 +250,7 @@ desired effect
                   </div>
                   <div class="form-group col-md-4">
                     <label>Quantidade a dar entrada</label>
-                    <input type="number" class="form-control" placeholder="0">
+                    <input id="txtQtde" type="number" class="form-control" placeholder="0">
                   </div>
                   <div class="form-group col-md-1">
                     <div class="row">
@@ -365,7 +365,7 @@ desired effect
                             <th>Quantidade: </th>
                             <th></th>
                             <th></th>
-                            <th><button type="button" data-toggle="modal" data-target="#modal-vencimento" class="btn btn-primary pull-right">Adicionar Medicamento</button></th>
+                            <th><button id="btnAddMedicamento" type="button" data-toggle="modal" data-target="#modal-vencimento" class="btn btn-primary pull-right">Adicionar Medicamento</button></th>
                           </tr>
                         </tfoot>
                         </table>
@@ -524,8 +524,8 @@ desired effect
 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>
-            <a href="../../paginas/farmacia/cadastrar_medicamento.html"><button class="btn btn-primary">Confirmar</button></a>
+            <button id="fechaModalVencimento" type="button" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>
+            <button id="btnConfirmar" class="btn btn-primary">Confirmar</button>
           </div>
         </div>
         <!-- /.modal-content -->

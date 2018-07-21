@@ -279,10 +279,10 @@ desired effect
                     <label>Unidade de medida</label>
                     <select id="ddlUnidadeMedida" class="form-control select2" style="width: 100%;">
                       <option>Selecione...</option>
-                      <option>Oral</option>
                       <option>Miligramas</option>
                       <option>Mililitros</option>
                       <option>Comprimido</option>
+                      
                     </select>
                   </div>
                   <div class="form-group col-md-2">
@@ -307,6 +307,7 @@ desired effect
             <a id="btnEntradaEstoque" href="../../paginas/farmacia/entrada_estoque.html"><button class="btn btn-success pull-right">Entrada de Estoque</button></a>
             <button id="btnCadastrar" type="submit" class="btn btn-primary">Cadastrar</button>
             <button id="modal-medicamento-existente-trigger" class="btn btn-success" data-toggle="modal" data-target="#modal-medicamento-existente" style="display: none" ></button>
+            <button id="modal-cadastro-sucesso" data-toggle="modal" data-target="#modal-cadastrado-sucesso" style="display: none"></button>
           </div>
         </div>
       </div>
@@ -416,6 +417,28 @@ desired effect
           <div class="modal-footer">
             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>
             <a href="../../paginas/farmacia/entrada_estoque.html"><button class="btn btn-primary">Confirmar</button></a>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <div class="modal fade" id="modal-cadastrado-sucesso">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Operação bem sucedida!</h4>
+          </div>
+          <div class="modal-body">
+            <p>O medicamento foi ativo com sucesso em sua base de dados!</p>
+          </div>
+          <div class="modal-footer">
+            
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button></a>
           </div>
         </div>
         <!-- /.modal-content -->
