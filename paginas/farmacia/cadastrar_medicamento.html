@@ -201,7 +201,7 @@ desired effect
         <!--<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Home</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li> -->
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Farmácia</span>
+          <a href="#"><i class="fa fa-plus-square"></i> <span>Farmácia</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -235,24 +235,26 @@ desired effect
     <section class="content container-fluid">
 
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
 
           <div class="box box-primary with-border">
 
             <form role="form">
               <div class="box-body">
                 <div class="row">
-                  <div class="form-group col-md-3">
+                  <div class="form-group col-md-4">
                     <label>Tipo</label>
-                    <select class="form-control select2" style="width: 100%;">
+                    <select id="ddlTipo" class="form-control select2" style="width: 100%;" >
+                      <option>Selecione...</option>
                       <option>Fitoterápico</option>
                       <option>Homeopático</option>
                       <option>Atopático</option>
                     </select>
                   </div>
-                  <div class="form-group col-md-5">
+                  <div class="form-group col-md-4">
                     <label>Medicamento</label>
-                    <select class="form-control select2" style="width: 100%;">
+                    <select id="ddlMedicamento" class="form-control select2" style="width: 100%;">
+                      <option>Selecione...</option>
                       <option>Aceclofenaco</option>
                       <option>Biozatin</option>
                       <option>Captopril</option>
@@ -266,7 +268,8 @@ desired effect
                 <div class="row">
                   <div class="form-group col-md-4">
                     <label>Via de administração</label>
-                    <select class="form-control select2" style="width: 100%;">
+                    <select id="ddlViaAdministracao" class="form-control select2" style="width: 100%;">
+                      <option>Selecione...</option>
                       <option>Oral</option>
                       <option>Nasal</option>
                       <option>Tópico</option>
@@ -274,33 +277,37 @@ desired effect
                   </div>
                   <div class="form-group col-md-4">
                     <label>Unidade de medida</label>
-                    <select class="form-control select2" style="width: 100%;">
+                    <select id="ddlUnidadeMedida" class="form-control select2" style="width: 100%;">
+                      <option>Selecione...</option>
                       <option>Miligramas</option>
                       <option>Mililitros</option>
                       <option>Comprimido</option>
+
                     </select>
                   </div>
-                  <div class="form-group col-md-2">
-                    <div class="row">
+                  <div class="form-group col-md-4">
+
                       <label>Estoque crítico</label>
-                      <img src="../../images/icons8-ajuda-50.png" height="25" width="25" data-toggle="tooltip" title="Estoque crítico é a quantidade mínima no estoque para que os avisos sejam ativados!">
-                    </div>
-                    <div class="row">
-                      <input type="number" class="form-control" placeholder="Quantidade">
-                    </div>
+                      <img src="../../images/icons8-ajuda-50.png" height="15" width="15" data-toggle="tooltip" title="Estoque crítico é a quantidade mínima no estoque para que os avisos sejam ativados!">
+
+
+                      <input id="numberQtde" type="number"  placeholder="Quantidade" class="form-control">
+
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-md-12">
                     <label>Observação</label>
-                    <textarea class="form-control" rows="3" placeholder="Digite..."></textarea>
+                    <textarea id="txtObservacao" class="form-control" rows="3" placeholder="Digite..."></textarea>
                   </div>
                 </div>
             </form>
           </div>
           <div class="box-footer">
-            <a href="../../paginas/farmacia/entrada_estoque.html"><button class="btn btn-success pull-right">Entrada de Estoque</button></a>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <a id="btnEntradaEstoque" href="../../paginas/farmacia/entrada_estoque.html"><button class="btn btn-success pull-right">Entrada de Estoque</button></a>
+            <button id="btnCadastrar" type="submit" class="btn btn-primary">Cadastrar</button>
+            <button id="modal-medicamento-existente-trigger" class="btn btn-success" data-toggle="modal" data-target="#modal-medicamento-existente" style="display: none" ></button>
+            <button id="modal-cadastro-sucesso" data-toggle="modal" data-target="#modal-cadastrado-sucesso" style="display: none"></button>
           </div>
         </div>
       </div>
@@ -396,7 +403,52 @@ desired effect
   <!-- Add the sidebar's background. This div must be placed
   immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
+  <div class="modal fade" id="modal-medicamento-existente">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Cancelar Cadastro de Medicamento</h4>
+          </div>
+          <div class="modal-body">
+            <p>Este medicamento já foi ativado em sua base, deseja dar entrada no estoque?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>
+            <a href="../../paginas/farmacia/entrada_estoque.html"><button class="btn btn-primary">Confirmar</button></a>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <div class="modal fade" id="modal-cadastrado-sucesso">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Operação bem sucedida!</h4>
+          </div>
+          <div class="modal-body">
+            <p>O medicamento foi cadastrado com sucesso!</p>
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button></a>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 </div>
+
+
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
@@ -436,6 +488,8 @@ desired effect
 <script src="../../dist/js/demo.js"></script>
 
 <script src="../../dist/js/pages/cadastro_medicamento.js"></script>
+
+<script src="js/farmacia.js"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
