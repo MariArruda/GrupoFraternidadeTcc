@@ -288,11 +288,11 @@ desired effect
                   <div class="form-group col-md-4">
 
                       <label>Estoque crítico</label>
-                      <img src="../../images/icons8-ajuda-50.png" height="25" width="25" data-toggle="tooltip" title="Estoque crítico é a quantidade mínima no estoque para que os avisos sejam ativados!">
-                    </div>
-                    <div class="row">
-                      <input id="numberQtde" type="number" class="form-control" placeholder="Quantidade">
-                    </div>
+
+
+
+                      <input id="numberQtde" type="number"  placeholder="Quantidade" class="form-control">
+
                   </div>
                 </div>
                 <div class="row">
@@ -304,10 +304,11 @@ desired effect
             </form>
           </div>
           <div class="box-footer">
-            <a id="btnEntradaEstoque" href="../../paginas/farmacia/entrada_estoque.html"><button class="btn btn-success pull-right">Entrada de Estoque</button></a>
-            <button id="btnCadastrar" type="submit" class="btn btn-primary">Cadastrar</button>
+            <a id="btnEntradaEstoque" href="../../paginas/farmacia/entrada_estoque.html"><button class="btn btn-success pull-right">Cadastrar</button></a>
+            <!-- <button href="javascript:window.history.go(-1)" id="btnCadastrar" type="submit" class="btn btn-primary">Voltar</button> -->
+			<a class="btn btn-primary" href="javascript:window.history.go(-1)">Voltar</a>
             <button id="modal-medicamento-existente-trigger" class="btn btn-success" data-toggle="modal" data-target="#modal-medicamento-existente" style="display: none" ></button>
-            <button id="modal-cadastro-sucesso" data-toggle="modal" data-target="#modal-cadastrado-sucesso" style="display: none"></button>
+            <button id="modal-cadastro-sucesso" data-toggle="modal" data-target="#modal-voltar-tela" style="display: none"></button>
           </div>
         </div>
       </div>
@@ -434,7 +435,7 @@ desired effect
             <h4 class="modal-title">Operação bem sucedida!</h4>
           </div>
           <div class="modal-body">
-            <p>O medicamento foi ativo com sucesso em sua base de dados!</p>
+            <p>O medicamento foi cadastrado com sucesso!</p>
           </div>
           <div class="modal-footer">
 
@@ -446,6 +447,30 @@ desired effect
       <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+
+
+	<div class="modal fade" id="modal-voltar-tela">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Implementar ação para este botão</h4>
+          </div>
+          <div class="modal-body">
+            <p>Não há tela anterior para que esta operação ocorra</p>
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button></a>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
 </div>
 
 

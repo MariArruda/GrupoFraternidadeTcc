@@ -237,148 +237,51 @@ desired effect
     <section class="content container-fluid">
 
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
 
           <div class="box box-primary with-border">
 
             <form role="form">
               <div class="box-body">
                 <div class="row">
-                  <div class="form-group col-md-3">
-                    <label>Código interno</label>
-                    <input disabled type="text" class="form-control" placeholder="00015468">
-                  </div>
+
+				 <div class="form-group col-md-6">
+                    <label>Medicamento</label>
+                    <select disabled class="form-control select2" style="width: 100%;">
+                      <option>Medicamento selecionado tela anterior</option>
+                    </select>
+                </div>
+
+                  <div class="form-group col-md-6">
+                      <label>Un. Medida</label>
+                      <input disabled type="text" class="form-control" placeholder="mg">
+                   </div>
+
                   <div class="form-group col-md-4">
                     <label>Quantidade a dar entrada</label>
                     <input id="txtQtde" type="number" class="form-control" placeholder="0">
                   </div>
-                  <div class="form-group col-md-1">
-                    <div class="row">
-                      <label>Un. Medida</label>
-                    </div>
-                    <div class="row">
-                      <input disabled type="text" class="form-control" placeholder="mg">
-                    </div>
+
+                 <div class="form-group col-md-4">
+                    <label>Vencimento</label>
+                    <input id="txtVencimento" type="date" class="form-control" placeholder="0">
                   </div>
-                </div>
-                <div class="row">
-                  <div class="form-group col-md-6">
-                    <label>Medicamento</label>
-                    <select class="form-control select2" style="width: 100%;">
-                      <option>Aceclofenaco</option>
-                      <option>Biozatin</option>
-                      <option>Captopril</option>
-                      <option>Dipirona</option>
-                      <option>Dipropam</option>
-                      <option>Efedrin</option>
-                      <option>Famox</option>
-                    </select>
+
+				  <div class="form-group col-md-4">
+                    <label>Procedência</label>
+                    <input id="txtProcedencia" type="text" class="form-control" placeholder="0">
                   </div>
+
+
                 </div>
-                <div class="row">
-                  <div class="col-xs-12">
-                    <div class="box">
-                      <div class="box-header">
-                        <h3 class="box-title">Detalhes</h3>
-                      </div>
-                      <!-- /.box-header -->
-                      <div class="box-body">
-                        <table id="table_estoque" class="table table-bordered table-striped">
-                          <thead>
-                          <tr>
-                            <th>Quantidade</th>
-                            <th>Unidade Medida</th>
-                            <th>Data de vencimento</th>
-                            <th>Procedência</th>
-                          </tr>
-                          </thead>
-                          <tbody>
-                          <tr>
-                            <td>10</td>
-                            <td>Mililitros</td>
-                            <td>13/09/2018</td>
-                            <td>Doação Castelo</td>
-                          </tr>
-                          <tr>
-                            <td>20</td>
-                            <td>Miligramas</td>
-                            <td>30/10/2018</td>
-                            <td>Doação Mock</td>
-                          </tr>
-                          <tr>
-                            <td>15</td>
-                            <td>Mililitros</td>
-                            <td>22/12/2018</td>
-                            <td>Doação Teste</td>
-                          </tr>
-                          <tr>
-                            <td>25</td>
-                            <td>Miligramas</td>
-                            <td>15/10/2018</td>
-                            <td>Doação de Alguém</td>
-                          </tr>
-                          <tr>
-                            <td>10</td>
-                            <td>Gotas</td>
-                            <td>27/11/2018</td>
-                            <td>Doação 10</td>
-                          </tr>
-                          <tr>
-                            <td>15</td>
-                            <td>Miligramas</td>
-                            <td>26/10/2018</td>
-                            <td>Doação Jorge</td>
-                          </tr>
-                          <tr>
-                            <td>30</td>
-                            <td>Miligramas</td>
-                            <td>28/11/2018</td>
-                            <td>Doação Dr. Fulano</td>
-                          </tr>
-                          <tr>
-                            <td>35</td>
-                            <td>Mililitros</td>
-                            <td>11/10/2018</td>
-                            <td>Doação Casa 2</td>
-                          </tr>
-                          <tr>
-                            <td>25</td>
-                            <td>Gotas</td>
-                            <td>19/12/2018</td>
-                            <td>Doação 10</td>
-                          </tr>
-                          <tr>
-                            <td>5</td>
-                            <td>Mililitros</td>
-                            <td>25/08/2018</td>
-                            <td>Doação Centro ABC</td>
-                          </tr>
-                          <tr>
-                            <td>5</td>
-                            <td>Mililitros</td>
-                            <td>25/08/2018</td>
-                            <td>Doação de teste</td>
-                          </tr>
-                        </tbody>
-                        <tfoot>
-                          <tr>
-                            <th>Quantidade: </th>
-                            <th></th>
-                            <th></th>
-                            <th><button id="btnAddMedicamento" type="button" data-toggle="modal" data-target="#modal-vencimento" class="btn btn-primary pull-right">Adicionar Medicamento</button></th>
-                          </tr>
-                        </tfoot>
-                        </table>
-                      </div>
-                      <!-- /.box-body -->
-                    </div>
-                  </div>
-                </div>
+
+
+
             </form>
           </div>
           <div class="box-footer">
-            <button type="submit" class="btn btn-primary pull-right">Cadastrar</button>
-            <button class="btn btn-success" data-toggle="modal" data-target="#modal-default">Cancelar</button>
+            <button class="btn btn-success" data-toggle="modal" data-target="#modal-default">Voltar</button>
+			<button type="submit" data-target="#modal-cadastrado-sucesso" class="btn btn-primary pull-right">Incluir</button>
           </div>
 
         </div>
@@ -526,6 +429,49 @@ desired effect
           <div class="modal-footer">
             <button id="fechaModalVencimento" type="button" class="btn btn-default pull-left" data-dismiss="modal">Fechar</button>
             <button id="btnConfirmar" class="btn btn-primary">Confirmar</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+<div class="modal fade" id="modal-voltar-tela">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Implementar ação para este botão</h4>
+          </div>
+          <div class="modal-body">
+            <p>Não há tela anterior para que esta operação ocorra</p>
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button></a>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+	<div class="modal fade" id="modal-cadastrado-sucesso">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Operação bem sucedida!</h4>
+          </div>
+          <div class="modal-body">
+            <p>O medicamento foi cadastrado com sucesso!</p>
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button></a>
           </div>
         </div>
         <!-- /.modal-content -->
